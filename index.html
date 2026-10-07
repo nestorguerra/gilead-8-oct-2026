@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
-  <meta name="referrer" content="no-referrer">
+  <title>CMm HER2- EN TIEMPOS DE IA · Agenda 8 de octubre de 2026</title>
+  <meta name="description" content="Agenda de la Jornada II - TRODELVY en CMm HR+HER2-. Jueves 8 de octubre de 2026, Hotel The Westin Madrid Cuzco.">
   <meta name="robots" content="noindex">
-  <title>Agenda · CMm HER2- EN TIEMPOS DE IA · 8 de octubre de 2026</title>
-  <meta name="description" content="Jornada II - TRODELVY en CMm HR+HER2- · Jueves 8 de octubre de 2026 · Hotel The Westin Madrid Cuzco">
-  <meta name="theme-color" content="#eef1f6">
+  <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="light">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#f3f4f8">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Agenda 8 oct">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
@@ -22,154 +22,106 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
-  <div class="backdrop" aria-hidden="true"></div>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <div class="shell">
-    <header class="hero glass">
-      <p class="hero-date"><time datetime="2026-10-08" data-bind="dateLabel"></time></p>
-      <h1 class="hero-title" data-bind="title"></h1>
-      <p class="hero-subtitle" data-bind="subtitle"></p>
-      <ul class="hero-chips" aria-label="Resumen">
-        <li class="chip">
-          <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <span data-bind="timeRange"></span>
-        </li>
-        <li>
-          <a class="chip chip-link" href="#lugar">
-            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-            <span data-bind="venue"></span>
-          </a>
-        </li>
-      </ul>
-      <p class="offline-pill" id="offline-pill" role="status" hidden>Sin conexión · mostrando la agenda guardada</p>
-    </header>
+  <header class="cabecera">
+    <div class="cabecera__interior">
+      <p class="cabecera__fecha">Jueves 8 de octubre de 2026</p>
+      <h1 class="cabecera__titulo">CMm HER2- EN TIEMPOS DE IA</h1>
+      <p class="cabecera__subtitulo">Jornada II - TRODELVY en CMm HR+HER2-</p>
+    </div>
 
-    <nav class="tabbar glass" aria-label="Secciones">
-      <a class="tab" href="#agenda" data-route="agenda">
-        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+    <nav class="pestanas" aria-label="Secciones">
+      <a class="pestana" href="#agenda" data-vista="agenda">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
         <span>Agenda</span>
       </a>
-      <a class="tab" href="#ponentes" data-route="ponentes">
-        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9.5" r="2.5"/><path d="M16.5 14.6A5 5 0 0 1 21.5 19.5"/></svg>
+      <a class="pestana" href="#ponentes" data-vista="ponentes">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17" cy="9.5" r="2.6"/><path d="M16.5 14.6c2.6.1 4.4 1.8 5 4.6"/></svg>
         <span>Ponentes</span>
       </a>
-      <a class="tab" href="#lugar" data-route="lugar">
-        <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <a class="pestana" href="#lugar" data-vista="lugar">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
         <span>Lugar</span>
       </a>
     </nav>
+  </header>
 
-    <main id="main" tabindex="-1">
-      <section class="view" id="view-agenda" data-view="agenda" aria-labelledby="h-agenda">
-        <div class="view-head">
-          <h2 id="h-agenda" tabindex="-1">Agenda</h2>
-          <a class="btn btn-primary js-ics" href="agenda.ics" type="text/calendar" data-filename="agenda-8-octubre-2026.ics">
-            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
-            Añadir al calendario
-          </a>
-        </div>
-        <p class="view-hint">Toca una sesión para ver sus detalles.</p>
-        <ol class="sessions" id="session-list"></ol>
+  <main id="contenido" tabindex="-1">
+    <p class="aviso" id="aviso-conexion" role="status" hidden></p>
 
-        <aside class="install-card glass" id="install-card" aria-labelledby="install-title">
-          <svg class="install-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
-          <div>
-            <h3 id="install-title">Tenla siempre a mano</h3>
-            <p>Tras esta primera visita, la agenda queda guardada y se puede consultar sin conexión.</p>
-            <p class="install-hint" id="install-hint-ios" hidden>En Safari, toca <strong>Compartir</strong> y después <strong>«Añadir a pantalla de inicio»</strong>.</p>
-            <p class="install-hint" id="install-hint-other" hidden>Abre el menú del navegador y elige <strong>«Añadir a pantalla de inicio»</strong> o <strong>«Instalar»</strong>.</p>
-            <button class="btn btn-secondary" type="button" id="install-btn" hidden>Añadir a pantalla de inicio</button>
-          </div>
-        </aside>
-      </section>
-
-      <section class="view" id="view-ponentes" data-view="ponentes" aria-labelledby="h-ponentes" hidden>
-        <div class="view-head">
-          <h2 id="h-ponentes" tabindex="-1">Ponentes</h2>
-        </div>
-        <ul class="speakers" id="speaker-list"></ul>
-      </section>
-
-      <section class="view" id="view-lugar" data-view="lugar" aria-labelledby="h-lugar" hidden>
-        <div class="view-head">
-          <h2 id="h-lugar" tabindex="-1">Lugar</h2>
-        </div>
-        <div class="venue">
-          <div class="map-art glass" aria-hidden="true">
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-              <rect width="400" height="300" fill="#f3f5f9"/>
-              <g fill="#e3e8f1">
-                <rect x="18" y="20" width="120" height="70" rx="10"/>
-                <rect x="18" y="112" width="120" height="78" rx="10"/>
-                <rect x="18" y="212" width="120" height="70" rx="10"/>
-                <rect x="250" y="20" width="132" height="58" rx="10"/>
-                <rect x="250" y="100" width="62" height="90" rx="10"/>
-                <rect x="330" y="100" width="52" height="90" rx="10"/>
-                <rect x="250" y="212" width="132" height="70" rx="10"/>
-              </g>
-              <g stroke="#fff" stroke-linecap="round" fill="none">
-                <path d="M0 101h400M0 201h400" stroke-width="14"/>
-                <path d="M321 0v300" stroke-width="10"/>
-                <path d="M194 -10 L188 310" stroke-width="44"/>
-              </g>
-              <path d="M194 -10 L188 310" stroke="#203662" stroke-opacity=".12" stroke-width="2" stroke-dasharray="10 10"/>
-              <circle class="map-pulse" cx="214" cy="150" r="30" fill="#c5203f" fill-opacity=".14"/>
-              <path d="M214 168s-20-17.5-20-32.5a20 20 0 0 1 40 0c0 15-20 32.5-20 32.5z" fill="#c5203f"/>
-              <circle cx="214" cy="135" r="7.5" fill="#fff"/>
-            </svg>
-          </div>
-          <div class="venue-info glass">
-            <h3 class="venue-name" data-bind="venue"></h3>
-            <address class="venue-address" id="venue-address" data-bind="address"></address>
-            <dl class="venue-facts">
-              <div><dt>Fecha</dt><dd data-bind="dateLabel"></dd></div>
-              <div><dt>Horario</dt><dd data-bind="timeRange"></dd></div>
-            </dl>
-            <div class="actions">
-              <a class="btn btn-primary" id="maps-apple" href="https://maps.apple.com/" target="_blank" rel="noopener noreferrer">
-                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-                Abrir en Apple Mapas<span class="sr-only"> (se abre en una ventana nueva)</span>
-              </a>
-              <a class="btn btn-secondary" id="maps-google" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
-                Abrir en Google Maps<span class="sr-only"> (se abre en una ventana nueva)</span>
-              </a>
-              <button class="btn btn-secondary" type="button" id="copy-address">Copiar dirección</button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <dialog class="sheet" id="session-sheet" aria-labelledby="sheet-title">
-    <div class="sheet-panel">
-      <div class="sheet-grabber" aria-hidden="true"></div>
-      <div class="sheet-top">
-        <p class="sheet-time" id="sheet-time"></p>
-        <button class="icon-btn" type="button" id="sheet-close" aria-label="Cerrar detalles">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </div>
-      <h2 class="sheet-title" id="sheet-title" tabindex="-1"></h2>
-      <h3 class="sheet-label" id="sheet-speakers-label">Ponentes</h3>
-      <ul class="sheet-speakers" id="sheet-speakers"></ul>
-      <h3 class="sheet-label">Lugar</h3>
-      <p class="sheet-venue"><strong data-bind="venue"></strong><br><span data-bind="address"></span></p>
-      <div class="actions">
-        <a class="btn btn-primary js-ics" id="sheet-ics" href="agenda.ics" type="text/calendar">
-          <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
-          Añadir sesión al calendario
+    <section class="vista" id="vista-agenda" aria-labelledby="titulo-agenda" data-vista="agenda">
+      <div class="vista__cabecera">
+        <h2 id="titulo-agenda" tabindex="-1">Agenda</h2>
+        <a class="boton boton--secundario" href="agenda.ics" type="text/calendar">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
+          Añadir agenda al calendario
         </a>
-        <a class="btn btn-secondary" href="#lugar">Cómo llegar</a>
+      </div>
+      <p class="vista__nota">Toca una sesión para ver sus detalles. Horario de Madrid.</p>
+      <ol class="sesiones panel" id="lista-sesiones"></ol>
+
+      <div class="panel instalar" id="instalar">
+        <h3>Guárdala en tu móvil</h3>
+        <p id="estado-offline">Tras la primera visita, la agenda queda guardada y puedes consultarla sin conexión.</p>
+        <p id="instalar-ayuda">Para añadirla a la pantalla de inicio, abre el menú del navegador y elige «Añadir a pantalla de inicio».</p>
+        <button class="boton boton--principal" type="button" id="boton-instalar" hidden>Añadir a la pantalla de inicio</button>
+      </div>
+    </section>
+
+    <section class="vista" id="vista-ponentes" aria-labelledby="titulo-ponentes" data-vista="ponentes" hidden>
+      <div class="vista__cabecera">
+        <h2 id="titulo-ponentes" tabindex="-1">Ponentes</h2>
+      </div>
+      <ul class="ponentes" id="lista-ponentes"></ul>
+    </section>
+
+    <section class="vista" id="vista-lugar" aria-labelledby="titulo-lugar" data-vista="lugar" hidden>
+      <div class="vista__cabecera">
+        <h2 id="titulo-lugar" tabindex="-1">Lugar</h2>
+      </div>
+      <div class="panel lugar">
+        <div class="lugar__icono" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
+        </div>
+        <h3 class="lugar__nombre">Hotel The Westin Madrid Cuzco</h3>
+        <address class="lugar__direccion">P.º de la Castellana, 133, Tetuán, 28046 Madrid</address>
+        <p class="lugar__fecha">Jueves 8 de octubre de 2026 · 18:00 – 20:15</p>
+        <div class="acciones">
+          <a class="boton boton--principal" id="enlace-apple-maps" href="https://maps.apple.com/?q=Hotel%20The%20Westin%20Madrid%20Cuzco&amp;address=P.%C2%BA%20de%20la%20Castellana%2C%20133%2C%20Tetu%C3%A1n%2C%2028046%20Madrid" target="_blank" rel="noopener noreferrer">Abrir en Apple Maps<span class="sr"> (se abre en otra ventana)</span></a>
+          <a class="boton boton--secundario" id="enlace-google-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel%20The%20Westin%20Madrid%20Cuzco%2C%20P.%C2%BA%20de%20la%20Castellana%2C%20133%2C%20Tetu%C3%A1n%2C%2028046%20Madrid" target="_blank" rel="noopener noreferrer">Abrir en Google Maps<span class="sr"> (se abre en otra ventana)</span></a>
+          <button class="boton boton--secundario" type="button" id="boton-copiar">Copiar dirección</button>
+        </div>
+        <p class="lugar__copiado" id="copiado" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="detalle" id="detalle" aria-labelledby="detalle-titulo">
+    <div class="detalle__barra">
+      <button class="boton-icono" type="button" id="detalle-anterior" aria-label="Sesión anterior">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <p class="detalle__contador" id="detalle-contador"></p>
+      <button class="boton-icono" type="button" id="detalle-siguiente" aria-label="Sesión siguiente">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <button class="boton-icono detalle__cerrar" type="button" id="detalle-cerrar" aria-label="Cerrar detalles">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="detalle__cuerpo">
+      <p class="detalle__hora" id="detalle-hora"></p>
+      <h2 class="detalle__titulo" id="detalle-titulo"></h2>
+      <h3 class="detalle__seccion">Ponentes</h3>
+      <ul class="detalle__ponentes" id="detalle-ponentes"></ul>
+      <h3 class="detalle__seccion">Lugar</h3>
+      <p class="detalle__lugar">Hotel The Westin Madrid Cuzco<br>P.º de la Castellana, 133, Tetuán, 28046 Madrid</p>
+      <div class="acciones">
+        <a class="boton boton--principal" id="detalle-calendario" href="agenda.ics" type="text/calendar">Añadir sesión al calendario</a>
+        <a class="boton boton--secundario" id="detalle-lugar" href="#lugar">Cómo llegar</a>
       </div>
     </div>
   </dialog>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <noscript>
-    <p class="noscript">Activa JavaScript para ver la agenda o <a href="agenda.ics">descarga la agenda para el calendario</a>.</p>
-  </noscript>
 </body>
 </html>

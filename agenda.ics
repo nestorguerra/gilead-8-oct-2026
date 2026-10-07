@@ -1,62 +1,63 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Agenda 8 oct 2026//ES
+PRODID:-//Agenda Gilead 8 oct 2026//ES
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:CMm HER2- EN TIEMPOS DE IA
+X-WR-TIMEZONE:Europe/Madrid
 BEGIN:VEVENT
-UID:cmm-her2-ia-20261008-sesion-1@agenda
-DTSTAMP:20261008T000000Z
+UID:gilead-agenda-8oct2026-sesion-1@agenda
+DTSTAMP:20261001T000000Z
 DTSTART:20261008T160000Z
 DTEND:20261008T160500Z
 SUMMARY:Bienvenida
 LOCATION:Hotel The Westin Madrid Cuzco\, P.º de la Castellana\, 133\, Tetu
  án\, 28046 Madrid
-DESCRIPTION:Dra. María Gión Cortés\nCMm HER2- EN TIEMPOS DE IA · Jornad
- a II - TRODELVY en CMm HR+HER2-
+DESCRIPTION:18:00 – 18:05\nDra. María Gión Cortés\n\nCMm HER2- EN TIEM
+ POS DE IA\nJornada II - TRODELVY en CMm HR+HER2-
 END:VEVENT
 BEGIN:VEVENT
-UID:cmm-her2-ia-20261008-sesion-2@agenda
-DTSTAMP:20261008T000000Z
+UID:gilead-agenda-8oct2026-sesion-2@agenda
+DTSTAMP:20261001T000000Z
 DTSTART:20261008T160500Z
 DTEND:20261008T163500Z
 SUMMARY:ADCs en CMm HR+ HER2-: ¿cuál\, cuándo y por qué?
 LOCATION:Hotel The Westin Madrid Cuzco\, P.º de la Castellana\, 133\, Tetu
  án\, 28046 Madrid
-DESCRIPTION:Dr. Alfonso López de Sa Lorenzo\nCMm HER2- EN TIEMPOS DE IA ·
-  Jornada II - TRODELVY en CMm HR+HER2-
+DESCRIPTION:18:05 – 18:35\nDr. Alfonso López de Sa Lorenzo\n\nCMm HER2- 
+ EN TIEMPOS DE IA\nJornada II - TRODELVY en CMm HR+HER2-
 END:VEVENT
 BEGIN:VEVENT
-UID:cmm-her2-ia-20261008-sesion-3@agenda
-DTSTAMP:20261008T000000Z
+UID:gilead-agenda-8oct2026-sesion-3@agenda
+DTSTAMP:20261001T000000Z
 DTSTART:20261008T163500Z
 DTEND:20261008T170500Z
 SUMMARY:Resolviendo un caso clínico de CMm HR+ HER2- con TRODELVY
 LOCATION:Hotel The Westin Madrid Cuzco\, P.º de la Castellana\, 133\, Tetu
  án\, 28046 Madrid
-DESCRIPTION:Dra. Coral García Quevedo Suero\nCMm HER2- EN TIEMPOS DE IA ·
-  Jornada II - TRODELVY en CMm HR+HER2-
+DESCRIPTION:18:35 – 19:05\nDra. Coral García Quevedo Suero\n\nCMm HER2- 
+ EN TIEMPOS DE IA\nJornada II - TRODELVY en CMm HR+HER2-
 END:VEVENT
 BEGIN:VEVENT
-UID:cmm-her2-ia-20261008-sesion-4@agenda
-DTSTAMP:20261008T000000Z
+UID:gilead-agenda-8oct2026-sesion-4@agenda
+DTSTAMP:20261001T000000Z
 DTSTART:20261008T170500Z
 DTEND:20261008T181000Z
 SUMMARY:TALLER PRÁCTICO 2 – Oncología 2.0: crea tu propio agente de IA
 LOCATION:Hotel The Westin Madrid Cuzco\, P.º de la Castellana\, 133\, Tetu
  án\, 28046 Madrid
-DESCRIPTION:Néstor Guerra\, Dra. María Gión Cortés\nCMm HER2- EN TIEMPO
- S DE IA · Jornada II - TRODELVY en CMm HR+HER2-
+DESCRIPTION:19:05 – 20:10\nNéstor Guerra\, Dra. María Gión Cortés\n\n
+ CMm HER2- EN TIEMPOS DE IA\nJornada II - TRODELVY en CMm HR+HER2-
 END:VEVENT
 BEGIN:VEVENT
-UID:cmm-her2-ia-20261008-sesion-5@agenda
-DTSTAMP:20261008T000000Z
+UID:gilead-agenda-8oct2026-sesion-5@agenda
+DTSTAMP:20261001T000000Z
 DTSTART:20261008T181000Z
 DTEND:20261008T181500Z
 SUMMARY:Conclusiones finales
 LOCATION:Hotel The Westin Madrid Cuzco\, P.º de la Castellana\, 133\, Tetu
  án\, 28046 Madrid
-DESCRIPTION:Dra. María Gión Cortés\nCMm HER2- EN TIEMPOS DE IA · Jornad
- a II - TRODELVY en CMm HR+HER2-
+DESCRIPTION:20:10 – 20:15\nDra. María Gión Cortés\n\nCMm HER2- EN TIEM
+ POS DE IA\nJornada II - TRODELVY en CMm HR+HER2-
 END:VEVENT
 END:VCALENDAR

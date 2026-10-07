@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="112" fill="#203662"/>
-  <rect x="116" y="120" width="280" height="280" rx="40" fill="#fff"/>
-  <path d="M156 120h200a40 40 0 0 1 40 40v40H116v-40a40 40 0 0 1 40-40z" fill="#c5203f"/>
-  <circle cx="256" cy="262" r="26" fill="none" stroke="#203662" stroke-width="16"/>
-  <circle cx="256" cy="334" r="31" fill="none" stroke="#203662" stroke-width="18"/>
+  <clipPath id="tarjeta"><rect x="97.3" y="112.6" width="317.4" height="317.4" rx="46"/></clipPath>
+  <rect x="97.3" y="112.6" width="317.4" height="317.4" rx="46" fill="#fff"/>
+  <rect x="97.3" y="112.6" width="317.4" height="71.7" fill="#c5203f" clip-path="url(#tarjeta)"/>
+  <g fill="none" stroke="#203662" stroke-width="18.4">
+    <circle cx="256" cy="258.6" r="36.9"/>
+    <circle cx="256" cy="344.1" r="45.1"/>
+  </g>
 </svg>

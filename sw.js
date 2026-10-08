@@ -1,72 +1,93 @@
-'use strict';
-
-// Solo se gestionan las cachés con este prefijo; las de otras apps del mismo dominio no se tocan.
-const PREFIJO = 'gilead-agenda-8oct2026-';
-const CACHE = PREFIJO + 'v2';
-
-const RECURSOS = [
-  './',
-  './index.html',
-  './styles.css',
-  './app.js',
-  './manifest.webmanifest',
-  './agenda.ics',
-  './ics/sesion-1.ics',
-  './ics/sesion-2.ics',
-  './ics/sesion-3.ics',
-  './ics/sesion-4.ics',
-  './ics/sesion-5.ics',
-  './icons/icon.svg',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './icons/icon-maskable-512.png',
-  './icons/apple-touch-icon.png'
+/* Service worker · Jornada II. La lista ASSETS y VERSION las actualiza tools/build.mjs. */
+const VERSION = "10f418a918-iphone";
+const CACHE = "jornada-ii-" + VERSION;
+const ASSETS = [
+  "./",
+  "./assets/css/app.css",
+  "./assets/icons/apple-touch-icon.png",
+  "./assets/icons/favicon-32.png",
+  "./assets/icons/favicon.svg",
+  "./assets/icons/icon-192.png",
+  "./assets/icons/icon-512.png",
+  "./assets/icons/icon-maskable-192.png",
+  "./assets/icons/icon-maskable-512.png",
+  "./assets/js/app.js",
+  "./assets/js/data.js",
+  "./ics/jornada-completa.ics",
+  "./ics/sesion-1.ics",
+  "./ics/sesion-2.ics",
+  "./ics/sesion-3.ics",
+  "./ics/sesion-4.ics",
+  "./ics/sesion-5.ics",
+  "./index.html",
+  "./manifest.webmanifest"
 ];
 
-self.addEventListener('install', (evento) => {
-  evento.waitUntil(
+const SCOPE = new URL("./", self.location).href;
+const INDEX = new URL("./index.html", self.location).href;
+const NAV_TIMEOUT_MS = 3000;
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
     caches.open(CACHE)
-      .then((cache) => cache.addAll(RECURSOS.map((ruta) => new Request(ruta, { cache: 'reload' }))))
+      .then((cache) => cache.addAll(ASSETS.map((a) => new Request(a, { cache: "reload" }))))
       .then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener('activate', (evento) => {
-  evento.waitUntil(
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
     caches.keys()
-      .then((nombres) => Promise.all(
-        nombres
-          .filter((nombre) => nombre.startsWith(PREFIJO) && nombre !== CACHE)
-          .map((nombre) => caches.delete(nombre))
-      ))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith("jornada-ii-") && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
 
-self.addEventListener('fetch', (evento) => {
-  const peticion = evento.request;
-  if (peticion.method !== 'GET') return;
-  const url = new URL(peticion.url);
-  if (url.origin !== self.location.origin) return;
+function isAppShell(url) {
+  const u = url.origin + url.pathname;
+  return u === SCOPE || u === INDEX;
+}
 
-  evento.respondWith((async () => {
-    const cache = await caches.open(CACHE);
-    const esNavegacion = peticion.mode === 'navigate';
-    const guardada = await cache.match(peticion, { ignoreSearch: true }) ||
-      (esNavegacion ? await cache.match('./index.html') : undefined);
+// Página principal: red primero (con tiempo límite) para recoger cambios de agenda; si no hay red, caché.
+async function appShell(event) {
+  const cache = await caches.open(CACHE);
+  const network = fetch(event.request).then((res) => {
+    if (res && res.ok) cache.put(INDEX, res.clone());
+    return res;
+  });
+  event.waitUntil(network.then(() => {}, () => {}));
+  const cached = await cache.match(INDEX);
+  if (!cached) return network;
+  try {
+    return await Promise.race([
+      network,
+      new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), NAV_TIMEOUT_MS)),
+    ]);
+  } catch (e) {
+    return cached;
+  }
+}
 
-    // Respuesta inmediata desde la caché propia y actualización en segundo plano.
-    const red = fetch(peticion).then((respuesta) => {
-      if (respuesta.ok && respuesta.type === 'basic' && !url.search) {
-        cache.put(peticion, respuesta.clone());
-      }
-      return respuesta;
-    });
+// Resto de archivos: caché primero; si faltan, red y se guardan.
+async function asset(request) {
+  const hit = await caches.match(request, { ignoreSearch: true });
+  if (hit) return hit;
+  const res = await fetch(request);
+  if (res && res.ok && res.type === "basic") {
+    const copy = res.clone();
+    caches.open(CACHE).then((c) => c.put(request, copy));
+  }
+  return res;
+}
 
-    if (guardada) {
-      evento.waitUntil(red.catch(() => {}));
-      return guardada;
-    }
-    return red.catch(() => Response.error());
-  })());
+self.addEventListener("fetch", (event) => {
+  const req = event.request;
+  if (req.method !== "GET") return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin || !url.href.startsWith(SCOPE)) return;
+  if (req.mode === "navigate" && isAppShell(url)) {
+    event.respondWith(appShell(event));
+    return;
+  }
+  event.respondWith(asset(req));
 });

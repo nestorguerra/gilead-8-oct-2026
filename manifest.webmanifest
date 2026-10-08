@@ -1,20 +1,46 @@
 {
-  "name": "CMm HER2- EN TIEMPOS DE IA · Agenda 8 de octubre de 2026",
-  "short_name": "Agenda 8 oct",
-  "description": "Jornada II - TRODELVY en CMm HR+HER2-. Jueves 8 de octubre de 2026, Hotel The Westin Madrid Cuzco.",
   "id": "./",
+  "name": "CMm HER2- EN TIEMPOS DE IA · Jornada II",
+  "short_name": "Jornada II",
+  "description": "Jornada II - TRODELVY en CMm HR+HER2- · Jueves 8 de octubre de 2026 · Hotel The Westin Madrid Cuzco",
+  "lang": "es-ES",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "lang": "es",
-  "dir": "ltr",
-  "background_color": "#f3f4f8",
-  "theme_color": "#f3f4f8",
+  "background_color": "#f2f2f7",
+  "theme_color": "#203662",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ]
 }
